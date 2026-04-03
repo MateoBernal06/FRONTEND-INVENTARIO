@@ -1,10 +1,11 @@
+import Login from "./pages/login.jsx"
+import {AuthContextProvider} from "./context/AuthContext.jsx"
 
 function App() {
-
   return (
-    <>
-      <h1>Hola Mundo</h1>
-    </>
+    <AuthContextProvider>
+      <Login/>
+    </AuthContextProvider>
   )
 }
 
