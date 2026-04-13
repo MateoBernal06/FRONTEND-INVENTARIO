@@ -9,22 +9,26 @@ html, body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     height: 100vh;
-    background-color: antiquewhite;
 }
 
 .image-login{
-    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
 }
 
 .form-login{
-    background-color: aqua;
     align-content: center;
     justify-content: center;
     display: grid;
 }
 
 .form {
-    background-color: white;
+    background-color: rgb(7, 35, 120);
+    border: solid 1px;
     padding: 20px;
     border-radius: 5px;
 }
@@ -33,10 +37,27 @@ html, body {
 .input-class {
     display: flex;
     flex-direction: column;
-    padding: 10px 0px 10px 0px;
+    padding: 10px;
+}
+
+.input-form{
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    border: solid 1px;
+}
+
+.button-sesion{
+    width: 300px;
+    height: 40px;
 }
 
 .place-button{
     display: grid;
     justify-items: center;
+    padding: 0px 0px 10px 0px;
+}
+
+.text-password{
+    text-align: center;
 }
