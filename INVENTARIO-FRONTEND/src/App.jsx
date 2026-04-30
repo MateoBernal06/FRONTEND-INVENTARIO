@@ -4,6 +4,7 @@ import { AuthContextProvider } from "./context/AuthContext.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "./context/ProtectedRoute.jsx";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="*" element={<p>404 Not Found</p>} />
         </Routes>
       </AuthContextProvider>
+      <ToastContainer />
     </BrowserRouter>
   );
 }

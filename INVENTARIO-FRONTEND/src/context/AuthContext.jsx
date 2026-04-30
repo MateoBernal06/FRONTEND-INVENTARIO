@@ -16,21 +16,28 @@ const AuthContextProvider = (props) => {
           body: JSON.stringify(user),
         },
       );
-      
+
       const data = await response.json();
       
-      if (!response.ok) {
-        throw new Error(`Error ${response.status}`);
+      if (!response.ok || !data.ok) {
+        return data
       }
+
       return data
       
     } catch (error) {
-      console.log(error);
+      console.log(`Error: ${error.message}`);
+      return { ok: false, msg: error.message };
     }
   };
   
   const login = async(user) => {
     const session = await loginUser(user);
+
+    if(!session.ok){
+      return session
+    }
+
     if(session.data.role === 'admin'){
       setUser(session)
       navigate('/dashboard/admin', {
@@ -43,6 +50,8 @@ const AuthContextProvider = (props) => {
         replace: true
       });
     }
+
+    return session
   };
 
   const logout = () => {
